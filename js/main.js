@@ -23,31 +23,41 @@ $(document).ready( function() {
   var playableBudget = budget[city];
   var remainingBudget = playableBudget;
   selectCity.value = city;
-  budgetStr.textContent = playableBudget;
-  remainingBudgetStr.textContent = remainingBudget;
+  budgetStr.textContent = playableBudget.toLocaleString();
+  remainingBudgetStr.textContent = remainingBudget.toLocaleString();
 
   function calculateBudget() {
     city = selectCity.value;
     playableBudget = budget[city];
-    budgetStr.textContent = playableBudget;
+    budgetStr.textContent = playableBudget.toLocaleString();
     newBudgetItems = document.getElementsByClassName("newBudgetFormAmt");
     usedBudget = 0;
-    for (var i = 0; i < newBudgetItems.length; i++) { 
-      usedBudget = usedBudget + Number(newBudgetItems[i].value);
+    for (var i = 0; i < newBudgetItems.length; i++) {
+      var currentVal = newBudgetItems[i].value;
+      var fixedVal = Number(currentVal.replace(/\D/g,''));
+      usedBudget = usedBudget + fixedVal;
     }
     remainingBudget = playableBudget - usedBudget;
-    remainingBudgetStr.textContent = remainingBudget;
+    remainingBudgetStr.textContent = remainingBudget.toLocaleString();
   }
 
   selectCity.addEventListener('change', function() {
     calculateBudget();
   });
 
-  newBudgetForm.addEventListener('input', function () {
+  newBudgetForm.addEventListener('input', function (e) {
+    //format amount inputs with commas
+    if (e.target.classList.contains('newBudgetFormAmt')) {
+      var currentInput = e.target.value;
+      var fixedInput = currentInput.replace(/\D/g,'');
+      var str = Number(fixedInput).toLocaleString();
+      e.target.value = str;
+    }
+
     calculateBudget();
   });
 
-  var lineItemHTML = "<div class='form-row'><div class='col-7'><input type='text' class='form-control' placeholder='Budget idea'></div><div class='col'><div class='input-group'><div class='input-group-prepend'><div class='input-group-text'>$</div></div><input type='number' step='1000000' class='form-control newBudgetFormAmt' placeholder='Amount'></div></div></div>"
+  var lineItemHTML = "<div class='form-row'><div class='col-7'><input type='text' class='form-control' placeholder='Budget idea'></div><div class='col'><div class='input-group'><div class='input-group-prepend'><div class='input-group-text'>$</div></div><input type='text' class='form-control newBudgetFormAmt' placeholder='Amount'></div></div></div>"
 
   addLineItemBtn.addEventListener('click', function() {
     childElement = document.createElement('div');
