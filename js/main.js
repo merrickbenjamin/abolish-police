@@ -57,7 +57,7 @@ $(document).ready( function() {
     calculateBudget();
   });
 
-  var lineItemHTML = "<div class='form-row'><div class='col-7'><input type='text' class='form-control' placeholder='Budget idea'></div><div class='col'><div class='input-group'><div class='input-group-prepend'><div class='input-group-text'>$</div></div><input type='text' class='form-control newBudgetFormAmt' placeholder='Amount'></div></div></div>"
+  var lineItemHTML = "<div class='row no-gutters'><div class='col-7'><input type='text' class='form-control' placeholder='Budget idea'></div><div class='col'><div class='input-group'><div class='input-group-prepend'><div class='input-group-text'>$</div></div><input type='text' class='form-control newBudgetFormAmt' placeholder='Amount'></div></div></div>"
 
   addLineItemBtn.addEventListener('click', function() {
     childElement = document.createElement('div');

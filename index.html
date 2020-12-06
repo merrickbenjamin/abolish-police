@@ -19,35 +19,42 @@
   </head>
   <body>
     <div class='container-fluid'>
-      <p>We must abolish police to create the world we deserve</p>
-      <select class='form-control form-control-lg' id='selectCity'>
-        <option value='dc' selected>Washington, DC</option>
-        <option value='nyc'>New York City, NY</option>
-      </select>
-
       <div class='row'>
-        <div class='col-md'>
-          <p>You have</p>
-          <h1>$<span id='cityPdBudget'></span></h1>
-          <p>to spend to create a city where everyone is truly safe and thriving.</p>
-        </div>
-        <div class='col-md'>
-          <h1>Your new, better city budget</h1>
-          <form id='newBudgetForm'>
-            <div class='form-row'>
-              <div class='col-7'>
-                <input type='text' class='form-control' placeholder='Budget idea'>
-              </div>
-              <div class='col'>
-                <div class='input-group'>
-                  <div class='input-group-prepend'>
-                    <div class='input-group-text'>$</div>
-                  </div>
-                  <input type='text' class='form-control newBudgetFormAmt' placeholder='Amount'>
-                </div>
-              </div>
+        <div class='col-md-5 police-state'>
+          <div class='row'>
+            <div class='col-xl-8 offset-xl-4'>
+              <p>We must abolish police to create the world we deserve</p>
+              <select class='form-control form-control-lg' id='selectCity'>
+                <option value='dc' selected>Washington, DC</option>
+                <option value='nyc'>New York City, NY</option>
+              </select>
+              <p>You have</p>
+              <h1>$<span id='cityPdBudget'></span></h1>
+              <p>to spend to create a city where everyone is truly safe and thriving.</p>
             </div>
-          </form>
+          </div>
+        </div>
+        <div class='col-md-7 abolition-state'>
+          <div class='row'>
+            <div class='col-xl-8'>
+              <h1>Your new, better city budget</h1>
+              <form id='newBudgetForm'>
+                <div class='row no-gutters'>
+                  <div class='col-7'>
+                    <input type='text' class='form-control' placeholder='Budget idea'>
+                  </div>
+                  <div class='col'>
+                    <div class='input-group'>
+                      <div class='input-group-prepend'>
+                        <div class='input-group-text'>$</div>
+                      </div>
+                      <input type='text' class='form-control newBudgetFormAmt' placeholder='Amount'>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
           <a href="#" id="addRow">Add line item</a>
           <p>You still have</p>
           <h1>$<span id='remainingBudget'></span></h1>
