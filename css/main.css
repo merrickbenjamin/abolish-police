@@ -1,0 +1,62 @@
+/* Globals */
+h1, h2, h3, h4, h5, h6, em {
+  font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight: 700;
+}
+
+body, p, a {
+  font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 18px;
+}
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #f7f7f7;
+}
+
+/* Extra markup and styles */
+
+.full-height {
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+}
+
+@media (max-width: 767px) {
+  .police-state, .abolition-state { padding-top: 50px; }
+}
+
+.police-state {
+  background: radial-gradient(circle at top right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(../images/police-crabapple-1.png) no-repeat top right;
+  background-size: cover;
+  padding: 100px 40px;
+  color: #ffffff;
+}
+
+.police-state .custom-select {
+  background: #000 url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='white' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right .75rem center/8px 10px;
+  color: #fff;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.abolition-state {
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), url(../images/abolition-crabapple-1.png) no-repeat center center;
+  background-size: cover;
+  padding: 100px 40px;
+  color: #000000;
+}
+
+.abolition-state .row.no-gutters {
+  padding-top: 16px;
+}
+
+.img-credit {
+  position: absolute;
+  bottom: 0;
+  margin: 8px 0;
+}
